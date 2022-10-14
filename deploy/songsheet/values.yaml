@@ -45,6 +45,7 @@ ingress:
   className: "nginx"
   annotations: 
     kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   host: "" # If this is set, then we will deploy an ingress
 
 resources: {}
