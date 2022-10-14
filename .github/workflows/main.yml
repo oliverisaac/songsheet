@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/songsheet:latest,${{ secrets.DOCKERHUB_USERNAME }}/songsheet:${{ env.GITHUB_SHA }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/songsheet:latest,${{ secrets.DOCKERHUB_USERNAME }}/songsheet:${{ github.sha }}
