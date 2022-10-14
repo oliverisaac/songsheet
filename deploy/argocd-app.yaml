@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: songsheet
+  namespace: argocd
+spec:
+  destination:
+    namespace: songsheet
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      parameters:
+      - name: ingress.host
+        value: songsheet.oisaac.dev
+      - name: image.tag
+        value: ${ARGOCD_APP_REVISION}
+    path: deploy/songsheet
+    repoURL: https://github.com/oliverisaac/songsheet
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
