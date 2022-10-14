@@ -51,14 +51,14 @@ body {
     margin: 1em 0 1em 0;
     width: 100%;
     display: block;
-    background-color: #D09063;
+    background-color: #d69e77;
     border-radius: 10px;
 }
 
 .title {
     font-size: 1.5em;
     font-weight: 600;
-    color: #E4c7af;
+    color: #26140d;
     padding: 10px;
 }
 
