@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eEuo pipefail
+
 for f in songs/song.*.txt; do
     num=$(cut -d. -f2 <<<"$f")
     title=$(head -n 1 "$f" | sed -r -e 's/^.*?[.] *//')
