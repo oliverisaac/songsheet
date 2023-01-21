@@ -1,4 +1,4 @@
-name: publish-github-sites
+name: publish-gh-pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "main"
 
 jobs:
-  docker:
+  publish-gh-pages:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout github pages branch"
