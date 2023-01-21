@@ -30,8 +30,9 @@ jobs:
             lyrics.js
           )
           for f in "${files_to_copy[@]}"; do
-            cp -v ${RUNNER_TEMP}/main-branch/"$f" ./"$f"
-            git add ./"$f"
+            cp -v ${RUNNER_TEMP}/main-branch/"$f" "./$f"
+            sed -i -e "s/CACHE_BUSTING_STRING/$( date  +%s )/g" "./$f"
+            git add "./$f"
           done
       - name: "Push the changes to gh-pages"
         run: |
