@@ -1,0 +1,41 @@
+name: publish-github-sites
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout github pages branch"
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+      - name: "Fetch main branch in a worktree so we can access the files"
+        run: |
+          git fetch origin main --depth 1
+          git worktree add --checkout ${RUNNER_TEMP}/main-branch/ origin/main
+      - name: "Generate site into the gh-pages branch"
+        run: |
+          (
+            cd "${RUNNER_TEMP}/main-branch/"
+            bash ./generate-lyrics.sh > ./lyrics.js
+          )
+          files_to_copy=(
+            index.html
+            style.css
+            vue.js
+            lyrics.js
+          )
+          for f in "${files_to_copy[@]}"; do
+            cp -v ${RUNNER_TEMP}/main-branch/"$f" ./"$f"
+            git add ./"$f"
+          done
+      - name: "Push the changes to gh-pages"
+        run: |
+          git config --global user.name 'Oliver Isaac (GH Actions)'
+          git config --global user.email 'oliverisaac@users.noreply.github.com'
+          git commit -am "Automated report"
+          git push origin gh-pages
