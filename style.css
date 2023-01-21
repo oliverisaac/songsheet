@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica";
+  /*font-family: "Geneva";*/
+}
+
+html {
+  background-color: #4a210f;
+  font-size: 12px;
+  padding: 10px;
+}
+
+body {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#filter {
+    padding: 10px;
+    width: 75%;
+    font-size: 2em;
+    border-radius: 10px;
+    border: 0px;
+}
+
+#controls > * {
+    display: inline;
+    margin: 0;
+    border: 0;
+}
+
+#fontAdjust > button {
+    width: 10%;
+    padding: 10px 0;
+    font-size: 2em;
+    float: right;
+    margin: 0 2px;
+    border-radius: 10px;
+
+    border: 1px solid #E4c7af;
+    background-color: #26140d;
+    color: #E4c7af;
+    cursor: pointer;
+}
+
+#songs {
+    width: 100%;
+}
+
+.song {
+    margin: 1em 0 1em 0;
+    width: 100%;
+    display: block;
+    background-color: #d69e77;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #26140d;
+    padding: 10px;
+}
+
+.lyrics {
+  white-space: pre-wrap;
+  padding: 10px;
+  padding-bottom: 20px;
+  font-size: 1em;
+  background-color: #E4c7af;
+    color: #26140d;
+    border-radius: 10px 10px 0 0;
+}
+
