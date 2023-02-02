@@ -2,7 +2,9 @@
 
 CHORUS:
   I want to see Jesus lifted high 
-  I want to see Jesus lifted high x4 
+  I want to see Jesus lifted high
+  I want to see Jesus lifted high
+  I want to see Jesus lifted high
 
 Verse 1:
   Though I may suffer for a while,
@@ -32,3 +34,4 @@ BRIDGE:
 
 (CHORUS)
 
+(BRIDGE)
