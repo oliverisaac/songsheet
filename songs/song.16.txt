@@ -7,12 +7,13 @@ Have you come to the end of yourself
 Do you thirst for a drink from the well
 Jesus is calling
 
-O come to
-The altar 
-The father's arms are open wide
-Forgiveness 
-Was bought with
-The precious blood of Jesus Christ
+[Chorus]:
+   O come to
+   The altar 
+   The father's arms are open wide
+   Forgiveness 
+   Was bought with
+   The precious blood of Jesus Christ
 
 Leave behind your regrets and mistakes
 Come today theres no reason to wait
@@ -21,7 +22,7 @@ Bring your sorrows and trade them for joy
 From the ashes a new life is born
 Jesus is calling
               		
-chorus
+[Chorus]
 
 [Bridge]
 O what a savior isn't he wonderful
