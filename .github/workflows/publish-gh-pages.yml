@@ -28,12 +28,15 @@ jobs:
             style.css
             vue.js
             lyrics.js
+            color-schemes/
           )
           date_format=$( TZ=America/Chicago date +"%Y-%m-%d %-l:%M:%S %p %Z" )
           for f in "${files_to_copy[@]}"; do
-            cp -v ${RUNNER_TEMP}/main-branch/"$f" "./${f}"
-            sed -i -e "s/CACHE_BUSTING_STRING/$( date  +%s )/g" "./${f}"
-            sed -i -e "s/LAST_UPDATE_TIME/${date_format}/g" "./${f}"
+            cp -r -v ${RUNNER_TEMP}/main-branch/"$f" "./${f}"
+            if [[ -f "$f" ]]; then
+              sed -i -e "s/CACHE_BUSTING_STRING/$( date  +%s )/g" "./${f}"
+              sed -i -e "s/LAST_UPDATE_TIME/${date_format}/g" "./${f}"
+            fi
             git add "./${f}"
           done
       - name: "Push the changes to gh-pages"
