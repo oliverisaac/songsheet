@@ -84,14 +84,15 @@ footer p {
   display: block;
   height: 10%;
   margin-top: 8px;
+  text-align: center;
 }
 
 #colorPicker button {
-  width: 10%;
+  width: 14%;
   height: 100%;
   padding: 10px 0;
   font-size: 2em;
-  margin: 0 2px;
+  margin: 0 1%;
   border-radius: 10px;
   cursor: pointer;
 
@@ -114,8 +115,20 @@ footer p {
   background-color: #381e41;
   color: #ddbbe1;
 }
+
 #colorPicker #oliver {
-border-color: #d1face;
-background-color: #163805;
-color: #d1face;
+  border-color: #d1face;
+  background-color: #163805;
+  color: #d1face;
+}
+
+#colorPicker #judy {
+  border-color: #ffcfed;
+  background-color: #7a1f53;
+  color: #ffcfed;
+}
+#colorPicker #katherine {
+  border-color: #ffb8b8;
+  background-color: #540005;
+  color: #ffb8b8;
 }
