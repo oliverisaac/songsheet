@@ -3,7 +3,6 @@
   <head>
     <title>Wednesday Night Song Sheet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" type="text/css" href="style.css?t=CACHE_BUSTING_STRING" />
   </head>
   <body id="">
@@ -25,12 +24,7 @@
           </button>
         </div>
         <div id="colorPicker">
-          <button id="default" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
-          <button id="cary" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
-          <button id="katherine" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
-          <button id="lydia" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
-          <button id="oliver" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
-          <button id="judy" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
+          <input class="color-range" id="color-range" type="range" min="0" max="360" value="75" title="">
         </div>
       </div>
 
@@ -50,9 +44,43 @@
     <script type="text/javascript" src="vue.js"></script>
     <script type="text/javascript">
 
-      function setColorScheme(scheme) {
-        document.getElementById("themeSetter").innerHTML =  "<link rel='stylesheet' type='text/css' href='color-schemes/" + scheme + ".css?t=CACHE_BUSTING_STRING' />";
-        setCookie("colorScheme", scheme, 365);
+      function setColorScheme(degree) {
+        darkest=`hsl(${degree}, 80%, 0%)`;
+        meddark=`hsl(${degree}, 80%, 20%)`;
+        medlight=`hsl(${degree}, 80%, 70%)`;
+        lightest=`hsl(${degree}, 80%, 85%)`;
+
+        document.getElementById("themeSetter").innerHTML =  [
+          `<style type="text/css">`,
+          `html {`,
+          `  background-color: ${meddark};`,
+          `}`,
+          ``,
+          `#fontAdjust > button {`,
+          `  border-color: ${lightest};`,
+          `  background-color: ${darkest};`,
+          `  color: ${lightest};`,
+          `}`,
+          ``,
+          `.song {`,
+          `  background-color: ${medlight};`,
+          `}`,
+          ``,
+          `.title {`,
+          `  color: ${darkest};`,
+          `}`,
+          ``,
+          `.lyrics {`,
+          `  background-color: ${lightest};`,
+          `  color: ${darkest};`,
+          `}`,
+          ``,
+          `footer p {`,
+          `  color: ${lightest};`,
+          `}`,
+          `</style>`,
+        ].join("\n");
+        setCookie("colorScheme", degree, 365);
       }
 
       function setCookie(cname, cvalue, exdays) {
@@ -135,11 +163,19 @@
       <div style="display:none" id="themeSetter">
       </div>
       <script>
-      userStyle = getCookie("colorScheme");
-      if( userStyle == "" ){
-        userStyle = "default";
-      }
-      setColorScheme(userStyle);
+        userStyle = getCookie("colorScheme");
+        if (userStyle == "") {
+          userStyle = 30;
+        }
+
+        var colorRange = document.getElementById('color-range')
+        colorRange.addEventListener('input', function(e) {
+          // var hue = ((this.value/100)*360).toFixed(0)
+          setColorScheme(this.value)
+        });
+        colorRange.value = userStyle;
+        var event = new Event('input');
+        colorRange.dispatchEvent(event);
       </script>
     </footer>
   </body>
