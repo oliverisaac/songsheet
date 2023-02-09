@@ -15,7 +15,6 @@ FROM nginx
 
 COPY --from=builder /build/lyrics.js /usr/share/nginx/html/
 COPY index.html style.css vue.js /usr/share/nginx/html/
-COPY color-schemes/ /usr/share/nginx/html/color-schemes/
 
 # Update the cach busing string to use the current timestamp
 RUN sed -i -e "s/CACHE_BUSTING_STRING/$( date +%s )/" /usr/share/nginx/html/index.html

@@ -28,7 +28,6 @@ jobs:
             style.css
             vue.js
             lyrics.js
-            color-schemes/
           )
           date_format=$( TZ=America/Chicago date +"%Y-%m-%d %-l:%M:%S %p %Z" )
           for f in "${files_to_copy[@]}"; do
