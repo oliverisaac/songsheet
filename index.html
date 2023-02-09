@@ -4,11 +4,7 @@
     <title>Wednesday Night Song Sheet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="style.css?t=1675905950"
-    />
+    <link rel="stylesheet" type="text/css" href="style.css?t=1675916426" />
   </head>
   <body id="">
     <div id="songsheet">
@@ -28,6 +24,14 @@
             -
           </button>
         </div>
+        <div id="colorPicker">
+          <button id="default" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
+          <button id="cary" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
+          <button id="katherine" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
+          <button id="lydia" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
+          <button id="oliver" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
+          <button id="judy" onClick="setColorScheme(this.id)" type="button">&nbsp;</button>
+        </div>
       </div>
 
       <div id="songs">
@@ -41,10 +45,16 @@
     </div>
     <script
       type="text/javascript"
-      src="lyrics.js?t=1675905950"
+      src="lyrics.js?t=1675916426"
     ></script>
     <script type="text/javascript" src="vue.js"></script>
     <script type="text/javascript">
+
+      function setColorScheme(scheme) {
+        document.getElementById("themeSetter").innerHTML =  "<link rel='stylesheet' type='text/css' href='color-schemes/" + scheme + ".css?t=1675916426' />";
+        setCookie("colorScheme", scheme, 365);
+      }
+
       function setCookie(cname, cvalue, exdays) {
         const d = new Date();
         d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -91,6 +101,7 @@
         setCookie("fontSize", size, 365);
       }
 
+
       userFontSize = getCookie("fontSize");
       if (userFontSize != "") {
         document.body.style.fontSize = userFontSize;
@@ -120,7 +131,16 @@
       });
     </script>
     <footer>
-      <p>Last updated: 2023-02-08 7:25:50 PM CST</p>
+      <p>Last updated: 2023-02-08 10:20:26 PM CST</p>
+      <div style="display:none" id="themeSetter">
+      </div>
+      <script>
+      userStyle = getCookie("colorScheme");
+      if( userStyle == "" ){
+        userStyle = "default";
+      }
+      setColorScheme(userStyle);
+      </script>
     </footer>
   </body>
 </html>
