@@ -1,7 +1,8 @@
 {
   "recommendations": [
-    "mads-hartmann.bash-ide-vscode",
     "timonwong.shellcheck",
-    "foxundermoon.shell-format"
+    "foxundermoon.shell-format",
+    "esbenp.prettier-vscode",
+    "ms-vscode.makefile-tools"
   ]
 }

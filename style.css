@@ -78,3 +78,44 @@ footer p {
   color: #e4c7af;
   padding: 10px;
 }
+
+#colorPicker {
+  width: 100%;
+  display: block;
+  height: 10%;
+  margin-top: 8px;
+}
+
+#colorPicker button {
+  width: 10%;
+  height: 100%;
+  padding: 10px 0;
+  font-size: 2em;
+  margin: 0 2px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  border: 1px solid #caf0f8;
+}
+
+#colorPicker #default {
+  border-color: #e4c7af;
+  background-color: #26140d;
+  color: #e4c7af;
+}
+
+#colorPicker #cary {
+  border-color: #caf0f8;
+  background-color: #03045e;
+  color: #caf0f8;
+}
+#colorPicker #lydia {
+  border-color: #ddbbe1;
+  background-color: #381e41;
+  color: #ddbbe1;
+}
+#colorPicker #oliver {
+border-color: #d1face;
+background-color: #163805;
+color: #d1face;
+}
