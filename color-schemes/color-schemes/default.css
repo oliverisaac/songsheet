@@ -1,0 +1,26 @@
+html {
+  background-color: #4a210f;
+}
+
+#fontAdjust > button {
+  border-color: #e4c7af;
+  background-color: #26140d;
+  color: #e4c7af;
+}
+
+.song {
+  background-color: #d69e77;
+}
+
+.title {
+  color: #26140d;
+}
+
+.lyrics {
+  background-color: #e4c7af;
+  color: #26140d;
+}
+
+footer p {
+  color: #e4c7af;
+}
