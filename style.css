@@ -227,3 +227,13 @@ footer p {
     }
   }
 }
+
+#study_guide_url {
+  display: block;
+  width: 100%;
+
+  border: 1px solid #e4c7af;
+  background-color: #26140d;
+  color: #e4c7af;
+  cursor: pointer;
+}
