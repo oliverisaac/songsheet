@@ -3,7 +3,7 @@
   <head>
     <title>Wednesday Night Song Sheet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css?t=1694400737" />
+    <link rel="stylesheet" type="text/css" href="style.css?t=1694400952" />
   </head>
   <body id="">
     <div id="songsheet">
@@ -43,7 +43,7 @@
     </div>
     <script
       type="text/javascript"
-      src="lyrics.js?t=1694400737"
+      src="lyrics.js?t=1694400952"
     ></script>
     <script type="text/javascript" src="vue.js"></script>
     <script type="text/javascript">
@@ -164,13 +164,13 @@
       });
     </script>
     <footer>
-      <p>Last updated: 2023-09-10 9:52:17 PM CDT</p>
+      <p>Last updated: 2023-09-10 9:55:52 PM CDT</p>
       <div style="display:none" id="themeSetter">
       </div>
       <script>
         userStyle = getCookie("colorScheme");
         if (userStyle == "") {
-          userStyle = 30;
+          userStyle = Math.floor(Math.random() * 361);
         }
 
         var colorRange = document.getElementById('color-range')
