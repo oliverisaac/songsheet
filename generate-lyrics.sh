@@ -11,6 +11,14 @@ function fix_CR() {
     tr  -d '\r' 
 }
 
+function sed() {
+    if which gsed &>/dev/null; then
+        gsed "$@"
+    else
+        command sed "$@"
+    fi
+}
+
 for f in songs/song.*.txt; do
 	num=$(cut -d. -f2 <<<"$f")
 	title=$(head -n 1 "${f}" | fix_apostrophes | fix_CR | sed -r -e 's/^.*?[.] *//')
