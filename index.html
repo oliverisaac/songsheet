@@ -36,6 +36,10 @@
           <div class="lyrics" style="display: none">{{ s.lyrics }}</div>
         </div>
       </div>
+      <div id="study-guide">
+        <a id="study_guide_url" class="title song" :href="guide_url">Study Guide PDF</a>
+      </div>
+    </div>
     </div>
     <script
       type="text/javascript"
@@ -144,6 +148,7 @@
         el: "#songsheet",
         data: {
           songs: songs.songs,
+          guide_url: songs.guide_url,
           filter: "",
         },
         computed: {

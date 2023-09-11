@@ -1,7 +1,7 @@
 # Generate the lyrics.js file
 FROM alpine:latest AS builder
 
-RUN apk add --no-cache jq bash
+RUN apk add --no-cache jq bash curl
 
 COPY generate-lyrics.sh /build/
 COPY songs /build/songs
