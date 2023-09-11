@@ -170,7 +170,7 @@
       <script>
         userStyle = getCookie("colorScheme");
         if (userStyle == "") {
-          userStyle = 30;
+          userStyle = Math.floor(Math.random() * 361);
         }
 
         var colorRange = document.getElementById('color-range')
